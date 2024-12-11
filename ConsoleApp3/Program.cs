@@ -1,5 +1,8 @@
 ﻿Random random = new Random();
 
+int rndnumber1 = 0;
+int rndnumber2 = 0;
+
 Console.WriteLine("Добро пожаловать в математическую викторину!");
 await (Task.Delay(900));
 Console.WriteLine("Смысл игры - решать примеры и зарабатывать за это очки");
@@ -7,14 +10,20 @@ await (Task.Delay(900));
 Console.WriteLine("Если вы готовы начать: 1 - Примеры на сложение | 2 - Примеры на вычитание | 3 - Примеры на умножение | 4 - Примеры на деление");
 string input = Console.ReadLine();
 
-Console.WriteLine("Введите диапазон чисел, от и до которых будут генерироваться примеры.");
-Console.WriteLine("Введите число от которого будет начинаться генерация");
-int rndnumber1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число на котором будет заканчиваться генерация");
-int rndnumber2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("1 - Выбрать диапазон чисел для генерации | 2 - Оставить базовый диапазон");
+int choiserange = Convert.ToInt32(Console.ReadLine());
+if (choiserange == 1)
+{
+ Console.WriteLine("Введите диапазон чисел, от и до которых будут генерироваться примеры.");
+ Console.WriteLine("Введите число от которого будет начинаться генерация");
+ rndnumber1 = Convert.ToInt32(Console.ReadLine());
+ Console.WriteLine("Введите число на котором будет заканчиваться генерация: ");
+ rndnumber2 = Convert.ToInt32(Console.ReadLine());
+}
+else { rndnumber1 = 1; rndnumber2 = 100; }
 
-int num1 = random.Next(rndnumber1, rndnumber2);
-int num2 = random.Next(rndnumber1, rndnumber2);
+Console.WriteLine("Введите кол-во примеров: ");
+int primersvalue = Convert.ToInt32(Console.ReadLine());
 
 switch (input)
 {
@@ -42,8 +51,11 @@ switch (input)
 
 void PlusSample() {
 
- for (int i = 0; i < 999; i++)
+ for (int i = 0; i < primersvalue; i++)
  {
+  int num1 = random.Next(rndnumber1, rndnumber2);
+  int num2 = random.Next(rndnumber1, rndnumber2);
+  
   Console.WriteLine($"Ваш пример: {num1} + {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 + num2 == userinput)
@@ -61,8 +73,12 @@ void PlusSample() {
 
 void MinusSample() {
  
- for (int i = 0; i < 999; i++)
+ for (int i = 0; i < primersvalue; i++)
  {
+  
+  int num1 = random.Next(rndnumber1, rndnumber2);
+  int num2 = random.Next(rndnumber1, rndnumber2);
+  
   Console.WriteLine($"Ваш пример: {num1} - {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 - num2 == userinput)
@@ -80,8 +96,12 @@ void MinusSample() {
 
 void MultiplicationSample() {
  
- for (int i = 0; i < 999; i++)
+ for (int i = 0; i < primersvalue; i++)
  {
+  
+  int num1 = random.Next(rndnumber1, rndnumber2);
+  int num2 = random.Next(rndnumber1, rndnumber2);
+  
   Console.WriteLine($"Ваш пример: {num1} * {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 * num2 == userinput)
@@ -99,8 +119,12 @@ void MultiplicationSample() {
 
 void DegreeSample() {
  
- for (int i = 0; i < 999; i++)
+ for (int i = 0; i < primersvalue; i++)
  {
+  
+  int num1 = random.Next(rndnumber1, rndnumber2);
+  int num2 = random.Next(rndnumber1, rndnumber2);
+  
   Console.WriteLine($"Ваш пример: {num1} : {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 % num2 == userinput)

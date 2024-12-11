@@ -7,6 +7,14 @@ await (Task.Delay(900));
 Console.WriteLine("Если вы готовы начать: 1 - Примеры на сложение | 2 - Примеры на вычитание | 3 - Примеры на умножение | 4 - Примеры на деление");
 string input = Console.ReadLine();
 
+Console.WriteLine("Введите диапазон чисел, от и до которых будут генерироваться примеры.");
+Console.WriteLine("Введите число от которого будет начинаться генерация");
+int rndnumber1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число на котором будет заканчиваться генерация");
+int rndnumber2 = Convert.ToInt32(Console.ReadLine());
+
+int num1 = random.Next(rndnumber1, rndnumber2);
+int num2 = random.Next(rndnumber1, rndnumber2);
 
 switch (input)
 {
@@ -36,8 +44,6 @@ void PlusSample() {
 
  for (int i = 0; i < 999; i++)
  {
-  int num1 = random.Next(1, 100);
-  int num2 = random.Next(1, 100);
   Console.WriteLine($"Ваш пример: {num1} + {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 + num2 == userinput)
@@ -57,8 +63,6 @@ void MinusSample() {
  
  for (int i = 0; i < 999; i++)
  {
-  int num1 = random.Next(1, 100);
-  int num2 = random.Next(1, 100);
   Console.WriteLine($"Ваш пример: {num1} - {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 - num2 == userinput)
@@ -78,8 +82,6 @@ void MultiplicationSample() {
  
  for (int i = 0; i < 999; i++)
  {
-  int num1 = random.Next(1, 100);
-  int num2 = random.Next(1, 100);
   Console.WriteLine($"Ваш пример: {num1} * {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 * num2 == userinput)
@@ -99,8 +101,6 @@ void DegreeSample() {
  
  for (int i = 0; i < 999; i++)
  {
-  int num1 = random.Next(1, 100);
-  int num2 = random.Next(1, 100);
   Console.WriteLine($"Ваш пример: {num1} : {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
   if (num1 % num2 == userinput)
@@ -116,4 +116,6 @@ void DegreeSample() {
 
 }
 
-
+/* TODO:
+ 1. Сделать сохранения счета опыта
+ 2. Сделать больше функций для примеров*/

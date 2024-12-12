@@ -2,6 +2,21 @@
 
 int rndnumber1 = 0;
 int rndnumber2 = 0;
+int exp = 0;
+string folder = "C:\\MathGame\\";
+
+if (Directory.Exists(folder) && File.ReadAllText(folder + "coindb.game") != "")
+{
+ string expget = File.ReadAllText(folder + "coindb.game");
+ exp = int.Parse(expget);
+}
+else
+{
+ File.Delete(folder + "coindb.game");
+ Directory.Delete(folder);
+ Directory.CreateDirectory(folder);
+ File.Create(folder + "coindb.game").Dispose();
+}
 
 Console.WriteLine("Добро пожаловать в математическую викторину!");
 await (Task.Delay(900));
@@ -61,6 +76,7 @@ void PlusSample() {
   if (num1 + num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 + num2}");
+   CoinAdd();
   }
   else
   {
@@ -84,6 +100,7 @@ void MinusSample() {
   if (num1 - num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 - num2}");
+   CoinAdd();
   }
   else
   {
@@ -107,6 +124,7 @@ void MultiplicationSample() {
   if (num1 * num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 * num2}");
+   CoinAdd();
   }
   else
   {
@@ -130,6 +148,7 @@ void DegreeSample() {
   if (num1 % num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 % num2}");
+   CoinAdd();
   }
   else
   {
@@ -140,6 +159,19 @@ void DegreeSample() {
 
 }
 
+void CoinAdd()
+{
+ 
+ int exprndgen = random.Next(1, 50);
+ int resultwin = exp + exprndgen;
+ File.WriteAllText(folder + "coindb.game", Convert.ToString(resultwin));
+ string getexp = File.ReadAllText(folder + "coindb.game");
+ exp = Convert.ToInt32(getexp);
+ Console.WriteLine($"Получено: {exprndgen} опыта! Всего опыта: {exp}");
+  
+}
+
 /* TODO:
  1. Сделать сохранения счета опыта
- 2. Сделать больше функций для примеров*/
+ 2. Сделать больше функций для примеров
+ 3. Доделать сохранение коинов*/

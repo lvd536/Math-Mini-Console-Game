@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{CEB1D27D-4130-4ABD-8F31-5A84D79B3B9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathMiniGame", "MathMiniGame\MathMiniGame.csproj", "{CEB1D27D-4130-4ABD-8F31-5A84D79B3B9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

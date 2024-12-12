@@ -5,39 +5,12 @@ int rndnumber2 = 0;
 int exp = 0;
 string folder = "C:\\MathGame\\";
 
-if (Directory.Exists(folder) && File.ReadAllText(folder + "coindb.game") != "")
-{
- string expget = File.ReadAllText(folder + "coindb.game");
- exp = int.Parse(expget);
-}
-else
-{
- File.Delete(folder + "coindb.game");
- Directory.Delete(folder);
- Directory.CreateDirectory(folder);
- File.Create(folder + "coindb.game").Dispose();
-}
+CheckData(); // Проверка данных. Если их нет - создание файла с кол-вом коинов
 
-Console.WriteLine("Добро пожаловать в математическую викторину!");
-await (Task.Delay(900));
-Console.WriteLine("Смысл игры - решать примеры и зарабатывать за это очки");
-await (Task.Delay(900));
-Console.WriteLine("Если вы готовы начать: 1 - Примеры на сложение | 2 - Примеры на вычитание | 3 - Примеры на умножение | 4 - Примеры на деление");
+StartCycle(); // Стартовый набор сообщений
 string input = Console.ReadLine();
 
-Console.WriteLine("1 - Выбрать диапазон чисел для генерации | 2 - Оставить базовый диапазон");
-int choiserange = Convert.ToInt32(Console.ReadLine());
-if (choiserange == 1)
-{
- Console.WriteLine("Введите диапазон чисел, от и до которых будут генерироваться примеры.");
- Console.WriteLine("Введите число от которого будет начинаться генерация");
- rndnumber1 = Convert.ToInt32(Console.ReadLine());
- Console.WriteLine("Введите число на котором будет заканчиваться генерация: ");
- rndnumber2 = Convert.ToInt32(Console.ReadLine());
-}
-else { rndnumber1 = 1; rndnumber2 = 100; }
-
-Console.WriteLine("Введите кол-во примеров: ");
+Settings(); // Настройки для игры
 int primersvalue = Convert.ToInt32(Console.ReadLine());
 
 switch (input)
@@ -171,6 +144,50 @@ void CoinAdd()
   
 }
 
+void CheckData()
+{
+ 
+ if (Directory.Exists(folder) && File.ReadAllText(folder + "coindb.game") != "")
+ {
+  string expget = File.ReadAllText(folder + "coindb.game");
+  exp = int.Parse(expget);
+ }
+ else
+ {
+  File.Delete(folder + "coindb.game");
+  Directory.Delete(folder);
+  Directory.CreateDirectory(folder);
+  File.Create(folder + "coindb.game").Dispose();
+ }
+ 
+}
+
+void StartCycle()
+{
+ Console.WriteLine("Добро пожаловать в математическую викторину!");
+ Task.Delay(900);
+ Console.WriteLine("Смысл игры - решать примеры и зарабатывать за это очки");
+ Task.Delay(900);
+ Console.WriteLine("Если вы готовы начать: 1 - Примеры на сложение | 2 - Примеры на вычитание | 3 - Примеры на умножение | 4 - Примеры на деление");
+}
+
+
+void Settings()
+{
+ Console.WriteLine("1 - Выбрать диапазон чисел для генерации | 2 - Оставить базовый диапазон");
+ int choiserange = Convert.ToInt32(Console.ReadLine());
+ if (choiserange == 1)
+ {
+  Console.WriteLine("Введите диапазон чисел, от и до которых будут генерироваться примеры.");
+  Console.WriteLine("Введите число от которого будет начинаться генерация");
+  rndnumber1 = Convert.ToInt32(Console.ReadLine());
+  Console.WriteLine("Введите число на котором будет заканчиваться генерация: ");
+  rndnumber2 = Convert.ToInt32(Console.ReadLine());
+ }
+ else { rndnumber1 = 1; rndnumber2 = 100; }
+
+ Console.WriteLine("Введите кол-во примеров: ");
+}
 /* TODO:
  1. Сделать сохранения счета опыта
  2. Сделать больше функций для примеров

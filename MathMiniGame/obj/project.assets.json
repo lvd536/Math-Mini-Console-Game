@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
-      "projectName": "ConsoleApp3",
-      "projectPath": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
+      "projectUniqueName": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\MathMiniGame\\MathMiniGame.csproj",
+      "projectName": "MathMiniGame",
+      "projectPath": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\MathMiniGame\\MathMiniGame.csproj",
       "packagesPath": "C:\\Users\\lvd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\ConsoleApp3\\obj\\",
+      "outputPath": "C:\\Users\\lvd\\RiderProjects\\ConsoleApp3\\MathMiniGame\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "configFilePaths": [

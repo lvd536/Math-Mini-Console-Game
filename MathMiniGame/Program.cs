@@ -276,11 +276,12 @@ void Profile(bool detailed)
  //Console.WriteLine("Получаю данный о профил...");
  if (detailed)
  {
-  Console.WriteLine("Ваш детализированный профиль с результатами ваших матчей: ");
+  Console.WriteLine("Ваш детализированный профиль с результатами ваших игр: ");
+  // TODO: Сделть детальную статистику по пользователю.
  }
  else
  {
-  Console.WriteLine("Ваш профиль с результатами ваших матчей: ");
+  Console.WriteLine("Ваш профиль с результатами ваших игр: ");
   Console.WriteLine($"Всего пройденых примеров: {primers}");
  }
 }

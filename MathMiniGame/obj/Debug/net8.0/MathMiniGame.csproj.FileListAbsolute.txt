@@ -1,0 +1,14 @@
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\bin\Debug\net8.0\MathMiniGame.exe
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\bin\Debug\net8.0\MathMiniGame.deps.json
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\bin\Debug\net8.0\MathMiniGame.runtimeconfig.json
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\bin\Debug\net8.0\MathMiniGame.dll
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\bin\Debug\net8.0\MathMiniGame.pdb
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.AssemblyInfoInputs.cache
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.AssemblyInfo.cs
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.csproj.CoreCompileInputs.cache
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.dll
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\refint\MathMiniGame.dll
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.pdb
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.genruntimeconfig.cache
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\ref\MathMiniGame.dll

@@ -1,17 +1,21 @@
-﻿Random random = new Random();
+﻿using System.Runtime;
+
+Random random = new Random();
 
 int rndnumber1 = 0;
 int rndnumber2 = 0;
 int exp = 0;
+int primers = 0;
 string folder = "C:\\MathGame\\";
 
-CheckData(); // Проверка данных. Если их нет - создание файла с кол-вом коинов
-
+CheckDataCoin(); // Проверка данных. Если их нет - создание файла с кол-вом коинов
+CheckDataPrimerSucces();
 StartCycle(); // Стартовый набор сообщений
 string input = Console.ReadLine();
 
 Settings(); // Настройки для игры
 int primersvalue = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("ВАЖНО: Посмотреть статистику - 001");
 
 switch (input)
 {
@@ -40,7 +44,6 @@ switch (input)
   break;
  
 }
-
 void PlusSample(int value) {
 
  for (int i = 0; i < value; i++)
@@ -50,10 +53,17 @@ void PlusSample(int value) {
   
   Console.WriteLine($"Ваш пример: {num1} + {num2}. Введите ответ: ");
   int userinput = Convert.ToInt32(Console.ReadLine());
+  //int userinputint = Convert.ToInt32(userinput);
   if (num1 + num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 + num2}");
+   PrimerAdd();
    CoinAdd();
+  }
+  else if (userinput == 001)
+  {
+   Profile(false);
+   break;
   }
   else
   {
@@ -77,7 +87,13 @@ void MinusSample(int value) {
   if (num1 - num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 - num2}");
+   PrimerAdd();
    CoinAdd();
+  }
+  else if (userinput == 001)
+  {
+   Profile(false);
+   break;
   }
   else
   {
@@ -101,7 +117,13 @@ void MultiplicationSample(int value) {
   if (num1 * num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 * num2}");
+   PrimerAdd();
    CoinAdd();
+  }
+  else if (userinput == 001)
+  {
+   Profile(false);
+   break;
   }
   else
   {
@@ -125,7 +147,13 @@ void DegreeSample(int value) {
   if (num1 % num2 == userinput)
   {
    Console.WriteLine($"Верно! Ответ: {num1 % num2}");
+   PrimerAdd();
    CoinAdd();
+  }
+  else if (userinput == 001)
+  {
+   Profile(false);
+   break;
   }
   else
   {
@@ -148,7 +176,15 @@ void CoinAdd()
   
 }
 
-void CheckData()
+void PrimerAdd()
+{
+
+ primers += 1;
+ File.WriteAllText(folder + "primerdb.game", Convert.ToString(primers));
+  
+}
+
+void CheckDataCoin()
 {
  
  if (Directory.Exists(folder) && File.ReadAllText(folder + "coindb.game") != "")
@@ -164,6 +200,26 @@ void CheckData()
  {
   Directory.CreateDirectory(folder);
   File.Create(folder + "coindb.game").Dispose();
+ }
+ 
+}
+
+void CheckDataPrimerSucces()
+{
+ 
+ if (Directory.Exists(folder) && File.Exists(folder + "primerdb.game"))
+ {
+  string primerget = File.ReadAllText(folder + "primerdb.game");
+  primers = int.Parse(primerget);
+ }
+ else if (Directory.Exists(folder) && !File.Exists(folder + "primerdb.game"))
+ {
+  File.Create(folder + "primerdb.game").Dispose();
+  File.WriteAllText(folder + "primerdb.game", "0");
+ }
+ else
+ {
+  
  }
  
 }
@@ -209,24 +265,22 @@ void AllinOne()
    case 2: MinusSample(1); break;
    case 3: MultiplicationSample(1); break;
    case 4: DegreeSample(1); break;
+   default: Console.WriteLine("Вы ввели некорректное значение."); break;
   }
 
  }
+}
 
- void Profile(bool detailed)
+void Profile(bool detailed)
+{
+ //Console.WriteLine("Получаю данный о профил...");
+ if (detailed)
  {
-
-  if (detailed)
-  {
-   Console.WriteLine("Ваш деталтзтрованный профиль с результатами ваших матчей: ");
-   // TODO: Сделать детализированный профиль
-  }
-  else
-  {
-   Console.WriteLine("Ваш профиль с результатами ваших матчей: ");
-   // TODO: Сделать профиль
-  }
-  
+  Console.WriteLine("Ваш детализированный профиль с результатами ваших матчей: ");
  }
-
+ else
+ {
+  Console.WriteLine("Ваш профиль с результатами ваших матчей: ");
+  Console.WriteLine($"Всего пройденых примеров: {primers}");
+ }
 }

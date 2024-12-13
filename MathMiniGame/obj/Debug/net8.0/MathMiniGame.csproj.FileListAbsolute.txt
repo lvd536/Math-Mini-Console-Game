@@ -12,3 +12,4 @@ C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\D
 C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.pdb
 C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.genruntimeconfig.cache
 C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\ref\MathMiniGame.dll
+C:\Users\Татьяна\Desktop\Math-Mini-Console-Game-master\MathMiniGame\obj\Debug\net8.0\MathMiniGame.sourcelink.json
